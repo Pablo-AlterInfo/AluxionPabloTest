@@ -8,7 +8,7 @@ namespace AluxionTest.Configuration
     {
         public MapperInitializer()
         {
-            CreateMap<DbUser, RegisterDto>().ReverseMap();
+
         }
     }
 }

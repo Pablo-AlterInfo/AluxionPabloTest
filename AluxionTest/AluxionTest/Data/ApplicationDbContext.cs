@@ -11,7 +11,7 @@ namespace AluxionTest.Data
         {
 
         }
-        public DbSet<DbUser> DbUsers { get; set; }
+
     }
 }
 
