@@ -43,7 +43,7 @@ Finalmente, ejecutar el proyecto.
 
 
 
-## Endpoints
+## Endpoints de Acceso
 
 ### ​/api​/Users​/Register
 
@@ -51,26 +51,45 @@ Registro de usuarios en el sistema
 
 ### /api/Users/Login
 
-Autenticación de usuarios en el sistema, este endpoint regresa un token del tipo "bearer" el cual es necesario para poder acceder a los otros endpoints de la API
-![alt text](https://imgur.com/RWb04wK)
+Autenticación de usuarios en el sistema, este endpoint regresa un token del tipo "bearer" el cual es necesario para poder acceder a los otros endpoints de la API. 
 
-```python
-import foobar
+Para introducir el bearer token desde Swagger, acceder al botón "Authorize" en la parte superior derecha de la página
+![alt text](https://i.imgur.com/RWb04wK.jpg)
 
-# returns 'words'
-foobar.pluralize('word')
+Luego, colocar el token con el formato mostrado en la imagen:
+![alt text](https://i.imgur.com/myYa6HX.jpg)
 
-# returns 'geese'
-foobar.pluralize('goose')
+Hecho esto, se podrá acceder al resto de Endpoints disponibles.
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+## Endpoints de AWS S3
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Por defecto, todos los endpoints de AWS S3 están apuntando al bucket "bucket-prueba-pablo" que creé para este proyecto. 
 
-Please make sure to update tests as appropriate.
+Están implementados todos los casos solicitados por la prueba práctica:
+* Subir archivos
+* Descargar archivos
+* Listar archivos
+* Eliminar archivos
+* Renombrar archivos
+* Obtener URL de archivos
+* Subir directamente imagen desde API externa de imagenes (Unsplash)
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## Endpoints de Unsplash
+
+Se cuentan con los siguientes endpoints
+
+* Obtener lista de imágenes
+* Obtener imagen específica utilizando el Id de la misma
+
+
+# Que faltó
+
+* Realizar pruebas unitarias automatizadas
+* Dockerizar el proyecto (tuve muchas dificultades intentando lograr este paso, nunca lo habia hecho antes y me quede sin tiempo)
+* Subir los archivos al bucket de AWS S3 que me indicaron. Aparentemente las llaves de acceso están vencidas o son inválidas.
+
+# Finalmente
+
+Gracias por la oportunidad. Estoy atento a sus comentarios,
+
+Pablo Izquierdo
