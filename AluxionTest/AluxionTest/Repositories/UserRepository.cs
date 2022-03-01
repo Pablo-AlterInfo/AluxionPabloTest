@@ -38,6 +38,16 @@ namespace AluxionTest.Repositories
         public async Task<ResponseDto> RegisterUserAsync(RegisterDto model)
         {
 
+            var exist = await _userManager.FindByEmailAsync(model.Email);
+            if (exist != null)
+            {
+                return new ResponseDto
+                {
+                    DisplayMessage = "Este correo ya está registrado",
+                    IsSuccess = false,
+                };
+            }
+
             if (model == null)
             {
                 throw new NullReferenceException("Modelo de Registro nulo");

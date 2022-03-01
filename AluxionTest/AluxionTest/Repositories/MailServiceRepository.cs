@@ -17,7 +17,8 @@ namespace AluxionTest.Repositories
         }
         public async Task SendEmailAsync(string toEmail, string subject, string content)
         {
-            var apiKey = _configuration["AppSettings:SendGridApiKey"];
+            var decode = System.Convert.FromBase64String(_configuration["AppSettings:SendGridApiKey"]);
+            var apiKey = System.Text.Encoding.UTF8.GetString(decode);
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("Pabloizquierdo2395@gmail.com", "Pablo");
             var to = new EmailAddress(toEmail);
