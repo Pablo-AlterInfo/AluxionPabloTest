@@ -118,7 +118,7 @@ namespace AluxionTest.Controllers
             _response.IsSuccess = true;
 
             _response.DisplayMessage = "URL obtenida con éxito";
-            return Ok(_response);
+            return Ok(result);
         }
         [HttpPut("Rename")]
         public async Task<IActionResult> RenameS3Object(string objectName, string newObjectName)

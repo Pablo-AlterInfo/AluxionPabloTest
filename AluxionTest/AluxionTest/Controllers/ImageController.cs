@@ -40,7 +40,7 @@ namespace AluxionTest.Controllers
             _response.DisplayMessage = "Lista de Imágenes adquirida de manera exitosa";
 
 
-            return Ok(_response);
+            return Ok(image);
         }
         [HttpGet("ImageById")]
         public async Task<IActionResult> GetImageId(string imageId)
